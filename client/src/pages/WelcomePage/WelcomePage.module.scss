@@ -40,6 +40,16 @@
 
         margin-bottom: 5px;
     }
+
+    @media screen and (max-width: 530px) {
+        width: 100%;
+        font-size: 40px;
+    }
+
+    @media screen and (max-width: 350px) {
+        width: 100%;
+        font-size: 35px;
+    }
 }
 
 .block {

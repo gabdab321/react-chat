@@ -1,3 +1,148 @@
-.main {
+@import "./src/styles/variables";
 
+.main {
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    overflow: hidden;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 75px;
+    margin-bottom: 40px;
+}
+
+.form {
+    width: 350px;
+
+    display: flex;
+    flex-direction: column;
+
+    @media screen and (max-width: 400px) {
+        width: 300px;
+    }
+}
+
+.input {
+    width: 100%;
+    border: 2px $mainColor solid;
+    border-radius: 16px;
+    padding: 15px;
+
+    transition: 0.2s linear;
+
+    &::placeholder {
+        font-size: 16px;
+    }
+
+    &:nth-child(2) {
+        margin-top: 10px;
+    }
+
+    &:focus {
+        outline: none;
+        transform: scale(1.02);
+    }
+}
+
+.button {
+    background-color: $mainColor;
+    color: #FFFFFF;
+
+    font-weight: bold;
+    font-size: 18px;
+
+    border: 0;
+    border-radius: 16px;
+
+    padding: 15px 30px;
+    margin-top: 20px;
+
+    cursor: pointer;
+    transition: 0.2s linear;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
+.ellipse {
+    position: absolute;
+    border-radius: 50%;
+
+    &:nth-child(1) {
+        width: 300px;
+        height: 300px;
+
+        background-color: $mainColor;
+
+        left: 0;
+        top: 0;
+        transform: translate(-20%, -20%);
+    }
+
+    &:nth-child(2) {
+        width: 300px;
+        height: 300px;
+
+        background-color: $mainColor;
+
+        right: 0;
+        top: 50%;
+        transform: translate(30%);
+    }
+
+    &:nth-child(3) {
+        width: 300px;
+        height: 300px;
+
+        background-color: $thirdlyColor;
+
+        left: 0;
+        bottom: 0;
+        transform: translate(-10%, 40%);
+    }
+
+    @media screen and (max-width: 800px){
+        &:nth-child(1) {
+            width: 200px;
+            height: 200px;
+        }
+
+        &:nth-child(2) {
+            width: 200px;
+            height: 200px;
+            transform: translate(40%, 45%);
+        }
+
+        &:nth-child(3) {
+            width: 200px;
+            height: 200px;
+        }
+    }
+
+    @media screen and (max-width: 400px){
+        &:nth-child(1) {
+            width: 150px;
+            height: 150px;
+        }
+
+        &:nth-child(2) {
+            width: 150px;
+            height: 150px;
+            transform: translate(40%, 70%);
+        }
+
+        &:nth-child(3) {
+            width: 150px;
+            height: 150px;
+        }
+    }
 }
