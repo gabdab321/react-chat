@@ -1,0 +1,23 @@
+.main {
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    min-height: 50px;
+
+    font-weight: bolder;
+    font-size: 16px;
+
+    border: #FFCCC7 2px solid;
+    border-radius: 16px;
+
+    color: crimson;
+    background-color: #FFF2F0;
+
+    margin: 10px 0 10px 0;
+    padding: 8px 13px;
+
+    &[hidden] {
+        display: none !important;
+    }
+}

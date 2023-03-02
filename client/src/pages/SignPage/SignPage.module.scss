@@ -19,60 +19,6 @@
     margin-bottom: 40px;
 }
 
-.form {
-    width: 350px;
-
-    display: flex;
-    flex-direction: column;
-
-    @media screen and (max-width: 400px) {
-        width: 300px;
-    }
-}
-
-.input {
-    width: 100%;
-    border: 2px $thirdlyColor solid;
-    border-radius: 16px;
-    padding: 15px;
-
-    transition: 0.2s linear;
-
-    &::placeholder {
-        font-size: 16px;
-    }
-
-    &:nth-child(2) {
-        margin-top: 10px;
-    }
-
-    &:focus {
-        outline: none;
-        transform: scale(1.02);
-    }
-}
-
-.button {
-    background-color: $thirdlyColor;
-    color: #FFFFFF;
-
-    font-weight: bold;
-    font-size: 18px;
-
-    border: 0;
-    border-radius: 16px;
-
-    padding: 15px 30px;
-    margin-top: 20px;
-
-    cursor: pointer;
-    transition: 0.2s linear;
-
-    &:hover {
-        transform: scale(1.05);
-    }
-}
-
 .ellipse {
     position: absolute;
     border-radius: 50%;
@@ -128,7 +74,7 @@
         }
     }
 
-    @media screen and (max-width: 400px){
+    @media screen and (max-width: 530px){
         &:nth-child(1) {
             width: 150px;
             height: 150px;
@@ -137,7 +83,8 @@
         &:nth-child(2) {
             width: 150px;
             height: 150px;
-            transform: translate(40%, 70%);
+            top: 60%;
+            transform: translate(40%, 90%);
         }
 
         &:nth-child(3) {

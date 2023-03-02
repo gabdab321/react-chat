@@ -1,13 +1,14 @@
 import React from 'react';
 import {Routes, Route} from "react-router-dom"
 import {privateRoutes, publicRoutes} from "../consts/routes";
+import {useAppSelector} from "../hooks/redux";
 
 const AppRouter = () => {
-    const isLogged = false
+    const {logged} = useAppSelector(state => state.logged)
 
     return (
         <Routes>
-            {isLogged ?
+            {logged ?
                 privateRoutes.map(route => <Route key={route.path} {...route} />)
                 :
                 publicRoutes.map(route => <Route key={route.path} {...route} />)
