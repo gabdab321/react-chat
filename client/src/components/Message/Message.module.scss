@@ -1,0 +1,44 @@
+@import "./src/styles/variables";
+
+.main {
+    display: inline-flex;
+    flex-direction: column;
+
+    width: auto;
+    max-width: 400px;
+
+    color: #FFFFFF;
+
+    border-radius: 12px;
+
+    padding: 6px;
+    margin-top: 10px;
+
+    &:nth-child(1) {
+        margin-top: 0;
+    }
+}
+
+.default {
+    align-self: flex-start;
+
+    background-color: $thirdlyColor;
+}
+
+.local {
+    align-self: flex-end;
+
+    background-color: $mainColor;
+}
+
+.content {
+    display: inline-block;
+    font-weight: bolder;
+    font-size: 16px;
+}
+
+.date {
+    align-self: flex-end;
+    margin-top: 3px;
+    font-size: 12px;
+}

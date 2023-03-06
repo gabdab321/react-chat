@@ -1,0 +1,28 @@
+@import "./src/styles/variables";
+
+.main {
+    width: 100%;
+    height: 80px;
+
+    border: 1px #D0D0D0 solid;
+
+    padding: 5px 15px;
+}
+
+.name {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.message {
+    margin-top: 3px;
+    color: #959595;
+}
+
+.date {
+    margin-top: 9px;
+
+    font-size: 14px;
+
+    color: $mainColor;
+}

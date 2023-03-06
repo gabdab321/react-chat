@@ -2,6 +2,8 @@ const express = require("express")
 const http = require("http")
 const {Server} = require("socket.io")
 const cors = require("cors")
+const moment = require("moment")
+
 const app = express()
 
 app.use(cors())
@@ -17,7 +19,13 @@ const io = new Server(server, {
 
 io.on("connection", socket => {
     socket.on("send_message", data => {
-        socket.broadcast.emit("receive_message", data)
+        let {message, room} = data
+        message = {...message, date: moment(message.date)}
+        socket.to(room).emit("receive_message", message)
+    })
+
+    socket.on("join", room => {
+        socket.join(room)
     })
 })
 

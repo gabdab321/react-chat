@@ -1,0 +1,61 @@
+@import "./src/styles/variables";
+
+.main {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 100vh;
+    border-right: 2px #999999 solid;
+}
+
+.search__block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+
+    padding-top: 10px;
+
+}
+
+
+.search__title {
+    font-size: 20px;
+    font-weight: bold;
+
+    color: $mainColor;
+}
+
+.input {
+    border: 2px $mainColor solid;
+    border-radius: 12px;
+
+    margin-top: 8px;
+    padding: 5px 10px;
+
+    transition: 0.2s linear;
+
+    &::placeholder {
+        font-size: 14px;
+    }
+
+    &:focus {
+        outline: none;
+        transform: scale(1.05);
+    }
+}
+
+label {
+    position: relative;
+
+    &:before {
+        content: "";
+        position: absolute;
+        right: 10px;
+        top: 8px;
+        bottom: 0;
+        width: 20px;
+        background: url("./Search.svg") center / contain no-repeat;
+    }
+}

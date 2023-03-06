@@ -5,6 +5,7 @@ import SignForm from "../../components/SignForm/SignForm";
 const SignPage = () => {
     return (
         <div className={cl.main}>
+
             <div className={cl.ellipse}/>
             <div className={cl.ellipse}/>
             <div className={cl.ellipse}/>

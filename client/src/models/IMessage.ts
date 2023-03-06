@@ -1,6 +1,6 @@
-import {Moment} from "moment"
-
 export interface IMessage {
     content: string
-    date: Moment
+    date: number
+    messageID: string
+    author: string
 }
