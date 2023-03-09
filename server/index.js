@@ -20,7 +20,6 @@ const io = new Server(server, {
 io.on("connection", socket => {
     socket.on("send_message", data => {
         let {message, room} = data
-        message = {...message, date: moment(message.date)}
         socket.to(room).emit("receive_message", message)
     })
 

@@ -1,13 +1,13 @@
 import {configureStore} from "@reduxjs/toolkit";
 import {userReducer} from "./slices/userSlice";
 import {loggedReducer} from "./slices/loggedSlice";
-import {socketReducer} from "./slices/socketSlice";
+import {historyReducer} from "./slices/historySlice";
 
 export const store = configureStore({
     reducer: {
         "logged": loggedReducer,
         "user": userReducer,
-        "socket": socketReducer
+        "history": historyReducer,
     }
 })
 

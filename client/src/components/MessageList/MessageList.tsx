@@ -1,13 +1,11 @@
 import React, {useEffect, useRef} from 'react';
-import {IMessage} from "../../models/IMessage";
 import cl from "./MessageList.module.scss"
 import Message from "../Message/Message";
+import {useAppSelector} from "../../hooks/redux";
 
-interface MessageListProps {
-    messageList: IMessage[]
-}
+const MessageList = () => {
+    const messageList = useAppSelector(state => state.history.history)
 
-const MessageList = ({messageList}: MessageListProps) => {
     const bottomRef = useRef<null | HTMLDivElement>(null)
 
     useEffect(() => {
@@ -20,12 +18,9 @@ const MessageList = ({messageList}: MessageListProps) => {
                 ?
                 <h3 className={cl.nomessage}>No messages yet</h3>
                 :
-                ""
-            }
-
-            {
                 messageList.map(message => <Message {...message} key={message.messageID}/>)
             }
+
             <div ref={bottomRef}/>
         </div>
     );
