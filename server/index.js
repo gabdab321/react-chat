@@ -1,33 +1,19 @@
-const express = require("express")
-const http = require("http")
-const {Server} = require("socket.io")
-const cors = require("cors")
-const moment = require("moment")
+const express = require('express');
+const app = express();
+const server = require('http').createServer(app);
+const io = require('socket.io')(server);
+const bodyParser = require('body-parser');
+const MongoClient = require('mongodb').MongoClient;
 
-const app = express()
+const url = 'mongodb://localhost:27017/chat';
+const dbName = 'chat';
 
-app.use(cors())
+MongoClient.connect(url, function(err, client) {
+    console.log("Connected successfully to server");
 
-const server = http.createServer(app)
+    const db = client.db(dbName);
+});
 
-const io = new Server(server, {
-    cors: {
-        origin: "http://localhost:3000",
-        methods: ["GET", "POST"]
-    }
-})
-
-io.on("connection", socket => {
-    socket.on("send_message", data => {
-        let {message, room} = data
-        socket.to(room).emit("receive_message", message)
-    })
-
-    socket.on("join", room => {
-        socket.join(room)
-    })
-})
-
-server.listen(3001, () => {
-    console.log("SERVER IS RUNNING")
-})
+server.listen(3000, function(){
+    console.log('listening on *:3000');
+});
